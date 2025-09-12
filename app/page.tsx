@@ -86,10 +86,13 @@ export default function Home() {
             </h2>
             <div className="glass-effect rounded-2xl p-8 md:p-10">
               <p className="text-lg text-gray-300 mb-6">
-                I'm a passionate Full-Stack Developer with expertise in building modern web applications using cutting-edge technologies. With a strong foundation in both frontend and backend development, I create seamless digital experiences that solve real-world problems.
+              I am a passionate and driven software engineer with a strong foundation in web, mobile, and backend development. I enjoy turning complex problems into simple, efficient, and scalable solutions. Over time, I’ve worked on projects ranging from digital healthcare systems and educational apps to sports league platforms, gaining hands-on experience with modern technologies such as Flutter, Python, Node.js, Express, Next.js, MongoDB, and SQLAlchemy.
               </p>
               <p className="text-lg text-gray-300 mb-8">
-                My journey in tech started with a curiosity for understanding how things work, which led me to pursue a career in software development. I specialize in JavaScript/TypeScript, React, Node.js, and have a keen interest in AI and machine learning applications.
+              I’m constantly learning and exploring new tools to improve my craft, with a special interest in building impactful applications that solve real-world problems. Beyond technical skills, I value collaboration, clean code, and user-centered design.
+              </p>
+              <p className="text-lg text-gray-300 mb-8">
+              My goal is to continue growing as a full-stack developer while contributing to projects that make a difference.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10">
                 {['Web Development', 'Mobile Apps', 'UI/UX Design', 'Cloud Computing', 'AI/ML', 'DevOps'].map((skill) => (
@@ -129,6 +132,8 @@ export default function Home() {
               { name: 'Node.js', icon: '🟢' },
               { name: 'Next.js', icon: '⏭️' },
               { name: 'Python', icon: '🐍' },
+              { name: 'Flutter', icon: '📱' },
+              { name: 'Firebase', icon: '🔥' },
               { name: 'Tailwind CSS', icon: '🎨' },
               { name: 'MongoDB', icon: '🍃' },
               { name: 'PostgreSQL', icon: '🐘' },
@@ -171,27 +176,33 @@ export default function Home() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: 'E-commerce Platform',
-                description: 'A full-stack e-commerce solution with payment integration and admin dashboard.',
-                tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-              },
-              {
-                title: 'AI Content Generator',
-                description: 'AI-powered content generation tool built with OpenAI API and Next.js.',
-                tags: ['Next.js', 'OpenAI', 'Tailwind CSS', 'TypeScript'],
-              },
-              {
-                title: 'Task Management App',
-                description: 'Collaborative task management application with real-time updates.',
-                tags: ['React', 'Firebase', 'Redux', 'Material UI'],
-              },
-              {
-                title: 'Portfolio Website',
-                description: 'Modern portfolio website built with Next.js and Framer Motion.',
-                tags: ['Next.js', 'Framer Motion', 'Tailwind CSS'],
-              },
+            {
+              [
+                {
+                  title: 'Digital Medical Booklet',
+                  description: 'Mobile and web app for digitizing patient health records in Cameroon with secure access control and communication features.',
+                  tags: ['Flutter', 'Firebase', 'SQLite', 'Encryption'],
+                },
+                {
+                  title: 'Cameroon Basketball League',
+                  description: 'Official website featuring team profiles, match schedules, and league standings for the Cameroon Basketball League.',
+                  tags: ['Next.js', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+                },
+                {
+                  title: 'LAN Chess Game',
+                  description: 'Python-based chess game with LAN multiplayer and AI opponent using Minimax algorithm.',
+                  tags: ['Python', 'Pygame', 'Socket Programming', 'AI'],
+                },
+                {
+                  title: 'MboaLearn',
+                  description: 'AI-powered e-learning app for mathematics with 3D visualizations and personalized learning paths.',
+                  tags: ['Flutter', 'FastAPI', 'Firebase', 'MATLAB'],
+                },
+                {
+                  title: 'Student Progression Tools',
+                  description: 'Educational tools for teachers to generate lesson plans, teaching methods, and track student progress.',
+                  tags: ['Python', 'Markdown', 'Docx/PDF Generation'],
+                },
             ].map((project, index) => (
               <motion.div 
                 key={project.title}
