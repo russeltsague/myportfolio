@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsague Russel - Software Developer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #3b82f6;
+            transition: width 0.5s ease-in-out;
+        }
+        .section-title {
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3b82f6;
+            display: inline-block;
+            padding-bottom: 0.25rem;
+        }
+        a:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <header class="bg-blue-600 text-white p-6 shadow-md fixed w-full z-30">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Tsague Russel</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#about" class="hover:text-blue-300">About Me</a></li>
+                    <li><a href="#skills" class="hover:text-blue-300">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-blue-300">Projects</a></li>
+                    <li><a href="#experience" class="hover:text-blue-300">Experience</a></li>
+                    <li><a href="#contact" class="hover:text-blue-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 pt-24 pb-12 max-w-5xl">
+        <!-- About Me Section -->
+        <section id="about" class="fade-in mb-16">
+            <h2 class="section-title">About Me</h2>
+            <p class="text-lg leading-relaxed max-w-3xl">
+                I am Tsague Russel, a software developer from Cameroon with expertise in mobile and web development, game development, and AI-powered educational tools. I combine technical skills with creativity to build impactful applications that solve real-world problems.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="fade-in mb-16">
+            <h2 class="section-title">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+                <div>
+                    <h3 class="font-semibold mb-4">Technical Skills</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Flutter & Dart</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Next.js & React</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Node.js & Express</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Tailwind CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>MongoDB & Firebase</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress-bar-fill" style="width: 75%;"></div></div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Python & Pygame</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress-bar-fill" style="width: 70%;"></div></div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>AI (Minimax algorithm)</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress-bar-fill" style="width: 65%;"></div></div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Soft Skills</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Problem-solving</li>
+                        <li>Project management</li>
+                        <li>Critical thinking</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="fade-in mb-16">
+            <h2 class="section-title">Projects / Work</h2>
+            <div class="space-y-12 max-w-4xl">
+                <article>
+                    <h3 class="font-semibold text-xl mb-2">Cameroun Basketball League Website</h3>
+                    <p class="mb-2">A full-stack web app for league management built with Next.js, Node.js, MongoDB, and Tailwind CSS.</p>
+                    <img src="assets/cbl-screenshot.png" alt="Cameroun Basketball League Website Screenshot" class="rounded shadow-md mb-2">
+                    <p>
+                        <a href="https://github.com/username/cbl-website" target="_blank" class="text-blue-600 hover:underline">GitHub</a> |
+                        <a href="https://cbl.example.com" target="_blank" class="text-blue-600 hover:underline">Live Demo</a>
+                    </p>
+                </article>
+
+                <article>
+                    <h3 class="font-semibold text-xl mb-2">MboaLearn Educational App</h3>
+                    <p class="mb-2">An AI-powered learning app for secondary/high school students built with Flutter, Python, and AI integration.</p>
+                    <img src="assets/mboalearn-screenshot.png" alt="MboaLearn Educational App Screenshot" class="rounded shadow-md mb-2">
+                    <p>
+                        <a href="https://github.com/username/mboalearn-app" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
+                    </p>
+                </article>
+
+                <article>
+                    <h3 class="font-semibold text-xl mb-2">LAN Chess Game with AI</h3>
+                    <p class="mb-2">A Python game with LAN multiplayer and AI opponent using the Minimax algorithm.</p>
+                    <img src="assets/lan-chess-screenshot.png" alt="LAN Chess Game Screenshot" class="rounded shadow-md mb-2">
+                    <p>
+                        <a href="https://github.com/username/lan-chess-game" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="fade-in mb-16">
+            <h2 class="section-title">Experience / Education</h2>
+            <div class="max-w-4xl space-y-6">
+                <div>
+                    <h3 class="font-semibold">Education</h3>
+                    <p>Diploma in IT/Computer Science from IAI Cameroon.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold">Freelance Work & Internships</h3>
+                    <p>Completed various freelance projects and internships, gaining practical experience in real-world applications of software development.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="fade-in mb-16">
+            <h2 class="section-title">Contact</h2>
+            <p class="mb-4">Let's build something amazing together! Reach out to me via email or connect on LinkedIn and GitHub.</p>
+            <ul class="space-y-2 max-w-4xl">
+                <li>Email: <a href="mailto:tsague.russel@example.com" class="text-blue-600 hover:underline">tsague.russel@example.com</a></li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/tsague-russel" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/tsague-russel</a></li>
+                <li>GitHub: <a href="https://github.com/tsague-russel" target="_blank" class="text-blue-600 hover:underline">github.com/tsague-russel</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 text-center text-gray-600 p-6">
+        &copy; 2025 Tsague Russel. All rights reserved.
+    </footer>
+</body>
+</html>
