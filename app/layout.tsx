@@ -1,15 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from 'next/font/google';
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster, ToastProvider } from "./components/ui/toaster";
 import "./globals.css";
 
-// Initialize Inter font with subsets for better performance
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-});
+// Using system font stack for better performance and reliability
+const fontSans = {
+  variable: '--font-sans',
+  className: 'font-sans',
+};
 
 export const metadata: Metadata = {
   title: 'Tsague Russel | Full-Stack Developer',
@@ -68,7 +66,7 @@ export default function RootLayout({
     <html 
       lang="en" 
       suppressHydrationWarning 
-      className={`${inter.variable} ${systemFontStack.variable} dark`}
+      className={`${fontSans.variable} dark`}
     >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
