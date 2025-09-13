@@ -1,19 +1,19 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+// Using system font stack for better performance and reliability
+const fontSans = {
+  variable: '--font-sans',
+  className: 'font-sans',
+};
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://tsaguerussel.com'),
   title: 'Tsague Russel | Full-Stack Developer',
   description: 'Full-Stack Developer & AI Enthusiast building modern web applications with cutting-edge technologies.',
   keywords: ['Full-Stack Developer', 'Web Development', 'React', 'TypeScript', 'Node.js', 'AI Enthusiast'],
   authors: [{ name: 'Tsague Russel' }],
   creator: 'Tsague Russel',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#09090b' },
-  ],
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -45,6 +45,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
+  colorScheme: 'dark light',
 };
 
 import { ThemeProvider } from "./components/theme-provider";
@@ -63,7 +64,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </head>
-      <body className={`${inter.variable} font-sans antialiased bg-background text-foreground transition-colors duration-300`}>
+      <body className={`${fontSans.variable} font-sans antialiased bg-background text-foreground transition-colors duration-300`}>
         <ClientLayout>
           {children}
         </ClientLayout>
