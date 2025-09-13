@@ -1,4 +1,7 @@
-import type { Metadata, Viewport } from "next";
+"use client";
+
+import { useState } from 'react';
+import { metadata, viewport } from './metadata';
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster, ToastProvider } from "./components/ui/toaster";
 import FloatingParticles from "./components/FloatingParticles";
@@ -11,49 +14,6 @@ const fontSans = {
   className: 'font-sans',
 };
 
-export const metadata: Metadata = {
-  title: 'Tsague Russel | Full-Stack Developer',
-  description: 'Full-Stack Developer & AI Enthusiast building modern web applications with cutting-edge technologies.',
-  keywords: ['Full-Stack Developer', 'Web Development', 'React', 'TypeScript', 'Node.js', 'AI Enthusiast'],
-  authors: [{ name: 'Tsague Russel' }],
-  creator: 'Tsague Russel',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#09090b' },
-  ],
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://tsaguerussel.com',
-    title: 'Tsague Russel | Full-Stack Developer',
-    description: 'Full-Stack Developer & AI Enthusiast building modern web applications with cutting-edge technologies.',
-    siteName: 'Tsague Russel',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Tsague Russel | Full-Stack Developer',
-    description: 'Full-Stack Developer & AI Enthusiast building modern web applications with cutting-edge technologies.',
-    creator: '@tsaguerussel',
-  },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
-  },
-  manifest: '/site.webmanifest',
-};
-
-export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#09090b' },
-  ],
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-};
-
 // System font stack as fallback
 const systemFontStack = {
   variable: '--font-system',
@@ -64,6 +24,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <html 
       lang="en" 
@@ -103,11 +64,38 @@ export default function RootLayout({
                       </li>
                     ))}
                   </ul>
-                  <button className="md:hidden p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                  </button>
+                  <div className="relative md:hidden">
+                    <button 
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                      className="p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
+                      aria-label="Toggle menu"
+                      aria-expanded={isMenuOpen}
+                    >
+                      {isMenuOpen ? (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      ) : (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                      )}
+                    </button>
+                    {isMenuOpen && (
+                      <div className="absolute right-0 mt-2 w-56 bg-gray-800 rounded-md shadow-lg py-1 z-50">
+                        {['home', 'skills', 'projects', 'experience', 'contact', 'achievements'].map((item) => (
+                          <a
+                            key={item}
+                            href={`#${item}`}
+                            className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {item.charAt(0).toUpperCase() + item.slice(1)}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </nav>
               </header>
               
