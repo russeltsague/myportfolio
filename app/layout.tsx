@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster, ToastProvider } from "./components/ui/toaster";
+import FloatingParticles from "./components/FloatingParticles";
+import MagneticCursor from "./components/MagneticCursor";
 import "./globals.css";
 
 // Using system font stack for better performance and reliability
@@ -109,10 +111,12 @@ export default function RootLayout({
                 </nav>
               </header>
               
-              <main className="flex-1">
+              <main className="flex-1 relative">
+                <FloatingParticles />
                 <div className="absolute inset-0 -z-10 overflow-hidden">
-                  <div className="absolute -top-[40%] -left-[20%] w-[80%] h-[80%] rounded-full bg-blue-500/10 blur-[100px]" />
-                  <div className="absolute -bottom-[30%] -right-[20%] w-[60%] h-[60%] rounded-full bg-cyan-500/10 blur-[100px]" />
+                  <div className="absolute -top-[40%] -left-[20%] w-[80%] h-[80%] rounded-full bg-blue-500/10 blur-[100px] animate-pulse" />
+                  <div className="absolute -bottom-[30%] -right-[20%] w-[60%] h-[60%] rounded-full bg-cyan-500/10 blur-[100px] animate-pulse" />
+                  <div className="absolute top-[20%] right-[10%] w-[40%] h-[40%] rounded-full bg-purple-500/5 blur-[80px] animate-pulse" />
                 </div>
                 {children}
               </main>
@@ -140,6 +144,7 @@ export default function RootLayout({
             </div>
             <Toaster />
           </ToastProvider>
+          <MagneticCursor />
         </ThemeProvider>
       </body>
     </html>
