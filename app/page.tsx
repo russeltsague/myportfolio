@@ -290,7 +290,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
-              <a href="mailto:your.email@example.com" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="mailto:russeltsague3@gmail.com" className="text-gray-400 hover:text-blue-400 transition-colors">
                 russeltsague3@gmail.com
               </a>
             </motion.div>
@@ -310,8 +310,8 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
-              <a href="tel:+1234567890" className="text-gray-400 hover:text-blue-400 transition-colors">
-                +237 695824579
+              <a href="tel:+237695824579" className="text-gray-400 hover:text-blue-400 transition-colors">
+                +237 695 82 45 79
               </a>
             </motion.div>
 
